@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Edmin</title>
+	<title>Admin</title>
 	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 				</a>
 
 			  	<a class="brand" href="index.html">
-			  		Edmin
+			  		Admin
 			  	</a>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">
@@ -48,19 +48,20 @@
 		<div class="container">
 			<div class="row">
 				<div class="module module-login span4 offset4">
-					<form class="form-vertical">
+					<form class="form-vertical" method="POST" action="{{ route('login') }}">
+						@csrf
 						<div class="module-head">
 							<h3>Sign In</h3>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="inputEmail" placeholder="Username">
+								<input class="span12" type="username" id="username" placeholder="Username" name="username" required autocomplete="username" autofocus>
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="password" id="inputPassword" placeholder="Password">
+									<input class="span12" type="password" id="password" placeholder="Password" name="password" >
 								</div>
 							</div>
 						</div>
